@@ -381,6 +381,8 @@ function createEpisodesObjectFromFeed (channel, options) {
       // sorts by order first, if defined, then sorts by date.
       // if multiple episodes were published at the same time,
       // they are then sorted by title
+      a.order = parseFloat(a.order);
+      b.order = parseFloat(b.order);
       if (a.order == b.order) {
         if (a.pubDate == b.pubDate) {
           return a.title > b.title ? -1 : 1
